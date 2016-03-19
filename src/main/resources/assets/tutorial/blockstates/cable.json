@@ -1,5 +1,6 @@
 {
   "variants": {
-    "normal": { "model": "tutorial:cable" }
+    "north=false": { "model": "tutorial:cable" },
+    "north=true": { "model": "tutorial:cable_n" }
   }
 }
