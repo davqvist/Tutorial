@@ -1,0 +1,21 @@
+[
+{
+  "modid": "tutorial",
+  "name": "1.8.9 Tutorials",
+  "description": "1.8.9 Tutorials from varoius sources",
+  "version": "0.1",
+  "mcversion": "1.8.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": [
+    "ernstlustig"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]
