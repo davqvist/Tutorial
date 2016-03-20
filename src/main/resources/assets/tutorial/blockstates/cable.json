@@ -1,8 +1,20 @@
 {
   "variants": {
-    "north=false,south=false": { "model": "tutorial:cable" },
-    "north=true,south=false": { "model": "tutorial:cable_n" },
-    "north=false,south=true": { "model": "tutorial:cable_n", "y": 180 },
-    "north=true,south=true": { "model": "tutorial:cable" }
+    "east=false,north=false,south=false,west=false": { "model": "tutorial:cable" },
+    "east=false,north=true,south=false,west=false": { "model": "tutorial:cable_n" },
+    "east=true,north=false,south=false,west=false": { "model": "tutorial:cable_n", "y": 90 },
+    "east=false,north=false,south=true,west=false": { "model": "tutorial:cable_n", "y": 180 },
+    "east=false,north=false,south=false,west=true": { "model": "tutorial:cable_n", "y": 270 },
+    "east=true,north=true,south=false,west=false": { "model": "tutorial:cable" },
+    "east=false,north=true,south=true,west=false": { "model": "tutorial:cable_ns" },
+    "east=false,north=true,south=false,west=true": { "model": "tutorial:cable" },
+    "east=true,north=false,south=true,west=false": { "model": "tutorial:cable" },
+    "east=true,north=false,south=false,west=true": { "model": "tutorial:cable_ns", "y": 90 },
+    "east=false,north=false,south=true,west=true": { "model": "tutorial:cable" },
+    "east=true,north=true,south=true,west=false": { "model": "tutorial:cable" },
+    "east=true,north=true,south=false,west=true": { "model": "tutorial:cable" },
+    "east=false,north=true,south=true,west=true": { "model": "tutorial:cable" },
+    "east=true,north=false,south=true,west=true": { "model": "tutorial:cable" },
+    "east=true,north=true,south=true,west=true": { "model": "tutorial:cable" }
   }
 }
