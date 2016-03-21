@@ -1,0 +1,72 @@
+{
+  "ambientocclusion": "false",
+  "textures": {
+    "particle": "tutorial:blocks/cable",
+    "cable": "tutorial:blocks/cable",
+    "cable_side": "tutorial:blocks/cable_side"
+  },
+  "elements": [
+    {
+      "from": [5, 5, 0],
+      "to": [11, 11, 11],
+      "shade": false,
+      "faces": {
+        "down": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "up": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "east": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "west": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "north": {
+          "uv": [5, 5, 11, 11],
+          "texture": "#cable"
+        },
+        "south": {
+          "uv": [5, 5, 11, 11],
+          "texture": "#cable_side"
+        }
+      }
+    },
+    {
+      "from": [5, 5, 5],
+      "to": [16, 11, 11],
+      "shade": false,
+      "faces": {
+        "down": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "up": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "east": {
+          "uv": [5, 5, 11, 11],
+          "texture": "#cable"
+        },
+        "west": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "north": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        },
+        "south": {
+          "uv": [5, 0, 11, 11],
+          "texture": "#cable_side"
+        }
+      }
+    }
+  ]
+}
