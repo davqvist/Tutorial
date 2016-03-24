@@ -20,12 +20,13 @@ public class BlockCable extends BlockTutorial {
     public static final PropertyBool SOUTH = PropertyBool.create("south");
     public static final PropertyBool WEST = PropertyBool.create("west");
     public static final PropertyBool UP = PropertyBool.create("up");
+    public static final PropertyBool DOWN = PropertyBool.create("down");
 
     public BlockCable(){
         super( new Material( MapColor.blackColor ) );
         this.setUnlocalizedName("cable");
         this.setBlockBounds( 0.3125F, 0.3125F, 0.3125F, 0.6875F, 0.6875F, 0.6875F );
-        this.setDefaultState( this.blockState.getBaseState().withProperty( NORTH, Boolean.valueOf( false ) ).withProperty( EAST, Boolean.valueOf( false ) ).withProperty( SOUTH, Boolean.valueOf( false ) ).withProperty( WEST, Boolean.valueOf( false ) ).withProperty( UP, Boolean.valueOf( false ) ) );
+        this.setDefaultState( this.blockState.getBaseState().withProperty( NORTH, Boolean.valueOf( false ) ).withProperty( EAST, Boolean.valueOf( false ) ).withProperty( SOUTH, Boolean.valueOf( false ) ).withProperty( WEST, Boolean.valueOf( false ) ).withProperty( UP, Boolean.valueOf( false ) ).withProperty( DOWN, Boolean.valueOf( false ) ) );
     }
 
     @SideOnly(Side.CLIENT)
@@ -53,10 +54,10 @@ public class BlockCable extends BlockTutorial {
     }
 
     public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
-        return state.withProperty( NORTH, Boolean.valueOf( this.canConnectTo( worldIn, pos.north() ) ) ).withProperty( EAST, Boolean.valueOf( this.canConnectTo( worldIn, pos.east() ) ) ).withProperty( SOUTH, Boolean.valueOf( this.canConnectTo( worldIn, pos.south() ) ) ).withProperty( WEST, Boolean.valueOf( this.canConnectTo( worldIn, pos.west() ) ) ).withProperty( UP, Boolean.valueOf( this.canConnectTo( worldIn, pos.up() ) ) );
+        return state.withProperty( NORTH, Boolean.valueOf( this.canConnectTo( worldIn, pos.north() ) ) ).withProperty( EAST, Boolean.valueOf( this.canConnectTo( worldIn, pos.east() ) ) ).withProperty( SOUTH, Boolean.valueOf( this.canConnectTo( worldIn, pos.south() ) ) ).withProperty( WEST, Boolean.valueOf( this.canConnectTo( worldIn, pos.west() ) ) ).withProperty( UP, Boolean.valueOf( this.canConnectTo( worldIn, pos.up() ) ) ).withProperty( DOWN, Boolean.valueOf( this.canConnectTo( worldIn, pos.down() ) ) );
     }
 
     protected BlockState createBlockState() {
-        return new BlockState( this, new IProperty[] {NORTH, EAST, SOUTH, WEST, UP} );
+        return new BlockState( this, new IProperty[] {NORTH, EAST, SOUTH, WEST, UP, DOWN} );
     }
 }
