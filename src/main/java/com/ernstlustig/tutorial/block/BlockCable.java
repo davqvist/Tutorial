@@ -35,6 +35,7 @@ public class BlockCable extends BlockTutorial {
     }
 
     @SideOnly(Side.CLIENT)
+    @Override
     public EnumWorldBlockLayer getBlockLayer() {
         return EnumWorldBlockLayer.CUTOUT_MIPPED;
     }
@@ -49,23 +50,27 @@ public class BlockCable extends BlockTutorial {
         return false;
     }
 
-    public boolean canConnectTo(IBlockAccess worldIn, BlockPos pos) {
-        Block block = worldIn.getBlockState(pos).getBlock();
-        return (block instanceof BlockCable);
+    public boolean canConnectTo( IBlockAccess worldIn, BlockPos pos ) {
+        Block block = worldIn.getBlockState( pos ).getBlock();
+        return( block instanceof BlockCable );
     }
 
-    public int getMetaFromState(IBlockState state) {
+    @Override
+    public int getMetaFromState( IBlockState state ) {
         return 0;
     }
 
-    public IBlockState getActualState(IBlockState state, IBlockAccess worldIn, BlockPos pos) {
+    @Override
+    public IBlockState getActualState( IBlockState state, IBlockAccess worldIn, BlockPos pos ) {
         return state.withProperty( NORTH, Boolean.valueOf( this.canConnectTo( worldIn, pos.north() ) ) ).withProperty( EAST, Boolean.valueOf( this.canConnectTo( worldIn, pos.east() ) ) ).withProperty( SOUTH, Boolean.valueOf( this.canConnectTo( worldIn, pos.south() ) ) ).withProperty( WEST, Boolean.valueOf( this.canConnectTo( worldIn, pos.west() ) ) ).withProperty( UP, Boolean.valueOf( this.canConnectTo( worldIn, pos.up() ) ) ).withProperty( DOWN, Boolean.valueOf( this.canConnectTo( worldIn, pos.down() ) ) );
     }
 
+    @Override
     protected BlockState createBlockState() {
         return new BlockState( this, new IProperty[] {NORTH, EAST, SOUTH, WEST, UP, DOWN} );
     }
 
+    @Override
     public void setBlockBoundsBasedOnState( IBlockAccess worldIn, BlockPos pos ){
         float xmin = this.canConnectTo( worldIn, pos.west() ) ? 0.0F : 0.3125F;
         float xmax = this.canConnectTo( worldIn, pos.east() ) ? 1.0F : 0.6875F;
@@ -77,6 +82,7 @@ public class BlockCable extends BlockTutorial {
         this.setBlockBounds( xmin, ymin, zmin, xmax, ymax, zmax );
     }
 
+    @Override
     public void addCollisionBoxesToList( World worldIn, BlockPos pos, IBlockState state, AxisAlignedBB mask, List<AxisAlignedBB> list, Entity collidingEntity ){
         float min = 0.3125F;
         float max = 0.6875F;
