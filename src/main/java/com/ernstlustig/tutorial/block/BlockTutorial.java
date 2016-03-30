@@ -1,5 +1,6 @@
 package com.ernstlustig.tutorial.block;
 
+import com.ernstlustig.tutorial.creativetab.CreativeTabTutorial;
 import com.ernstlustig.tutorial.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -9,7 +10,7 @@ public class BlockTutorial extends Block {
 
     public BlockTutorial( Material material ){
         super( material );
-        setCreativeTab( CreativeTabs.tabMisc );
+        this.setCreativeTab( CreativeTabTutorial.TUTORIAL_TAB );
     }
 
     public BlockTutorial(){

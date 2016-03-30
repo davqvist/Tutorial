@@ -1,5 +1,6 @@
 package com.ernstlustig.tutorial.item;
 
+import com.ernstlustig.tutorial.creativetab.CreativeTabTutorial;
 import com.ernstlustig.tutorial.reference.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -9,7 +10,7 @@ public class ItemTutorial extends Item {
 
     public ItemTutorial(){
         super();
-        setCreativeTab( CreativeTabs.tabMisc );
+        this.setCreativeTab( CreativeTabTutorial.TUTORIAL_TAB );
     }
 
     @Override
